@@ -1,0 +1,29 @@
+.preview {
+    white-space: pre-line;
+    padding: 8px;
+    height: 65px;
+    width: 100%;
+    border-bottom: 1px solid rgba(185, 184, 184, 0.4);
+    ;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken(#4746bd, 3);
+        color: #fff;
+    }
+}
+
+.selected {
+    background-color: lighten(#4746bd, 5);
+    color: #fff;
+}

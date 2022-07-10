@@ -1,0 +1,28 @@
+@import '../../animations.scss';
+
+.actionsMenu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    max-height: 56px;
+    padding-left: 16px;
+}
+
+.title {
+    font-size: 18px;
+    min-width: 304px;
+}
+
+.actionItemContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.lastSaved {
+    animation: fadeIn 0.4s both;
+}
