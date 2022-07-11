@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/bar.peled/.nvm/versions/node/v14.19.3/bin/node /Users/bar.peled/.nvm/versions/node/v14.19.3/bin/yarn add react-redux
+  /Users/bar.peled/.nvm/versions/node/v14.19.3/bin/node /Users/bar.peled/.nvm/versions/node/v14.19.3/bin/yarn install
 
 PATH: 
   /usr/local/opt/gnu-sed/libexec/gnubin:/Users/bar.peled/.nvm/versions/node/v14.19.3/bin:/Users/bar.peled/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
@@ -14,8 +14,12 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: connect ENETUNREACH 10.17.48.92:443
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16)
+  SyntaxError: /Users/bar.peled/Dev/notes/package.json: Unexpected token } in JSON at position 1198
+      at JSON.parse (<anonymous>)
+      at /Users/bar.peled/.nvm/versions/node/v14.19.3/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/bar.peled/.nvm/versions/node/v14.19.3/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/bar.peled/.nvm/versions/node/v14.19.3/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -33,8 +37,10 @@ npm manifest:
       "node-sass": "^7.0.1",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "react-redux": "^8.0.2",
       "react-scripts": "5.0.1",
       "redux": "^4.2.0",
+      "redux-thunk": "^2.4.1",
       "typescript": "^4.4.2",
       "web-vitals": "^2.1.0"
     },
@@ -65,7 +71,7 @@ npm manifest:
     "devDependencies": {
       "@types/react-redux": "^7.1.24",
       "@types/redux": "^3.6.0",
-      "@types/redux-thunk": "^2.1.0"
+      "@types/redux-thunk": "^2.1.0",
     }
   }
 
@@ -1102,7 +1108,7 @@ Lockfile:
       core-js-pure "^3.20.2"
       regenerator-runtime "^0.13.4"
   
-  "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+  "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
     version "7.18.6"
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.6.tgz#6a1ef59f838debd670421f8c7f2cbb8da9751580"
     integrity sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==
@@ -1963,7 +1969,7 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
-  "@types/hoist-non-react-statics@^3.3.0":
+  "@types/hoist-non-react-statics@^3.3.0", "@types/hoist-non-react-statics@^3.3.1":
     version "3.3.1"
     resolved "https://ni-nexus.naturalint.com/repository/ni-npm/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
     integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
@@ -2178,6 +2184,21 @@ Lockfile:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/@types/trusted-types/-/trusted-types-2.0.2.tgz#fc25ad9943bcac11cceb8168db4f275e0e72e756"
     integrity sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==
+  
+  "@types/use-sync-external-store@^0.0.3":
+    version "0.0.3"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
+    integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
+  
+  "@types/uuid4@^2.0.0":
+    version "2.0.0"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/@types/uuid4/-/uuid4-2.0.0.tgz#40a5376b7cbfde4f905403ab0e10d32b81aff341"
+    integrity sha512-lIeYnpveYni+lqo9X10IuFI11n/3l6RjxQvlVXVcijLp/w3jj+1CGX/dRIRJVtbO5ta6xYA9Xd3QqWGwUMvvng==
+  
+  "@types/uuid@^8.3.4":
+    version "8.3.4"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+    integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
   
   "@types/ws@^8.5.1":
     version "8.5.3"
@@ -5096,7 +5117,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
     integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
   
-  hoist-non-react-statics@^3.3.0:
+  hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
     version "3.3.2"
     resolved "https://ni-nexus.naturalint.com/repository/ni-npm/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
     integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -8046,6 +8067,18 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
     integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
   
+  react-redux@^8.0.2:
+    version "8.0.2"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/react-redux/-/react-redux-8.0.2.tgz#bc2a304bb21e79c6808e3e47c50fe1caf62f7aad"
+    integrity sha512-nBwiscMw3NoP59NFCXFf02f8xdo+vSHT/uZ1ldDwF7XaTpzm+Phk97VT4urYBl5TYAPNVaFm12UHAEyzkpNzRA==
+    dependencies:
+      "@babel/runtime" "^7.12.1"
+      "@types/hoist-non-react-statics" "^3.3.1"
+      "@types/use-sync-external-store" "^0.0.3"
+      hoist-non-react-statics "^3.3.2"
+      react-is "^18.0.0"
+      use-sync-external-store "^1.0.0"
+  
   react-refresh@^0.11.0:
     version "0.11.0"
     resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
@@ -8183,7 +8216,7 @@ Lockfile:
       indent-string "^4.0.0"
       strip-indent "^3.0.0"
   
-  redux-thunk@*:
+  redux-thunk@*, redux-thunk@^2.4.1:
     version "2.4.1"
     resolved "https://ni-nexus.naturalint.com/repository/ni-npm/redux-thunk/-/redux-thunk-2.4.1.tgz#0dd8042cf47868f4b29699941de03c9301a75714"
     integrity sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==
@@ -9477,6 +9510,11 @@ Lockfile:
     dependencies:
       punycode "^2.1.0"
   
+  use-sync-external-store@^1.0.0:
+    version "1.2.0"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+    integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+  
   util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -9501,6 +9539,11 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
+  
+  uuid4@^2.0.2:
+    version "2.0.2"
+    resolved "https://ni-nexus.naturalint.com/repository/ni-npm/uuid4/-/uuid4-2.0.2.tgz#d33169f4a8fe84b217f50a0f28f971cd9ff56216"
+    integrity sha512-TzsQS8sN1B2m9WojyNp0X/3JL8J2RScnrAJnooNPL6lq3lA02/XdoWysyUgI6rAif0DzkkWk51N6OggujPy2RA==
   
   uuid@^3.3.2:
     version "3.4.0"

@@ -1,0 +1,32 @@
+.button {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: capitalize;
+    margin: 0 4px;
+    padding: 0 8px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    min-height: 24px;
+    width: 56px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.5s, transform 0.3s, background-color 0.3s, color 0.3s;
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.05);
+        background-color: darken(#4746bd, 3);
+        color: #fff;
+    }
+
+    &:disabled {
+        background-color: #9ca7c0;
+        color: #fff;
+
+        &:hover {
+            transform: none;
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+    }
+}

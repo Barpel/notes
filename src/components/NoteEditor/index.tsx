@@ -1,6 +1,6 @@
 import React, { FC, useRef, useEffect, useState } from 'react';
 import styles from './index.module.scss';
-import { INote } from '../../type';
+import { INote } from '../../store/notes/interfaces';
 
 
 interface NoteEditorProps {

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styles from './index.module.scss';
 import { NotePreview } from '../NotePreview';
-import { INote } from '../../type';
+import { INote } from '../../store/notes/interfaces';
 
 
 interface NoteListProps {

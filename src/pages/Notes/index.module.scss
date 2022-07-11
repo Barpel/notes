@@ -1,0 +1,24 @@
+@import '../../animations.scss';
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.notesContainer {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 56px);
+}
+
+.fallbackMessage {
+    height: calc(100vh - 56px);
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #eff3f9;
+    animation: fadeIn 0.4s both;
+    text-align: center;
+    font-size: 32px;
+    padding: 80px 32px;
+}

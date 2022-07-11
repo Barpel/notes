@@ -18,12 +18,15 @@
 
     &:hover {
         cursor: pointer;
-        background-color: darken(#4746bd, 3);
-        color: #fff;
+        background-color: darken(#fff, 10);
     }
 }
 
 .selected {
-    background-color: lighten(#4746bd, 5);
+    background-color: darken(#4746bd, 3);
     color: #fff;
+
+    &:hover {
+        color: #000;
+    }
 }

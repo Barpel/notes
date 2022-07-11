@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import App from './App';
-import reducer from './store/reducer';
-import { NoteState, DispatchType, GenericAction } from './type';
+import reducer from './store/notes/reducer';
+import { NoteState, DispatchType, NoteAction } from './store/notes/interfaces';
 
-const store: Store<NoteState, GenericAction> & {
+const store: Store<NoteState, NoteAction> & {
   dispatch: DispatchType
 } = createStore(reducer, applyMiddleware(thunk));
 const root = ReactDOM.createRoot(

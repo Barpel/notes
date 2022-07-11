@@ -1,0 +1,5 @@
+export const ADD_NOTE = "ADD_NOTE";
+export const REMOVE_NOTE = "REMOVE_NOTE";
+export const EDIT_NOTE = "EDIT_NOTE";
+export const SET_NOTES = "SET_NOTES";
+export const SET_SORTED_NOTES = "SET_SORTED_NOTES";

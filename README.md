@@ -1,9 +1,11 @@
 ## Available Scripts
 
-Install dependencies by running `yarn install`
+This project uses `yarn` as its' package manager. Please make sure you have yarn installed before running anything.
 
 In the project directory, you can run:
+### `yarn install` 
 
+Installs all the project's dependencies
 ### `yarn start`
 
 Runs the app in the development mode.\
