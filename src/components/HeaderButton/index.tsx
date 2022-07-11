@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { INote } from '../../store/notes/interfaces';
+import React from 'react';
 import styles from './index.module.scss';
 
 interface HeaderButtonProps {
@@ -8,7 +7,7 @@ interface HeaderButtonProps {
     isDisabled: boolean
 }
 
-const HeaderButton: FC<HeaderButtonProps> = ({ value, onTrigger, isDisabled }) => {
+const HeaderButton = ({ value, onTrigger, isDisabled }: HeaderButtonProps) => {
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         onTrigger();

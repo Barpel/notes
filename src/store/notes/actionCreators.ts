@@ -1,4 +1,4 @@
-import { DispatchType, INote, NoteAction } from "./interfaces"
+import { INote, NoteAction } from "./interfaces"
 import {
     ADD_NOTE,
     REMOVE_NOTE,

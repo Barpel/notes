@@ -7,10 +7,6 @@ import { NoteEditor } from '../../components/NoteEditor';
 import { debounce } from '../../helpers/debounce';
 import { parseTimeFromSeconds, calculateTimeDifference } from '../../helpers/time';
 import { useNotes } from '../../hooks/NotesHook';
-// import { useInterval } from '../../hooks/IntervalHook';
-import { useNewInterval } from '../../hooks/NewIntervalHook';
-
-
 
 const getLastSavedTemplate = (time: number) => {
     return `Last saved ${parseTimeFromSeconds(Math.floor(time))} ago`;
@@ -21,23 +17,21 @@ const Notes = () => {
     const [selectedNote, setSelectedNote] = useState(notes[0]);
     const [lastSaved, setLastSaved] = useState('');
 
-    const { start, stop, counter } = useNewInterval();
-
     useEffect(() => {
-        const intervalTimeDiff = selectedNote && calculateTimeDifference(selectedNote.lastEdited);
-        intervalTimeDiff && setLastSaved(getLastSavedTemplate(intervalTimeDiff));
-    }, [counter, selectedNote])
+        if (selectedNote) {
+            const interval = window.setInterval(() => {
+                const intervalTimeDiff = selectedNote && calculateTimeDifference(selectedNote.lastEdited);
+                intervalTimeDiff && setLastSaved(getLastSavedTemplate(intervalTimeDiff));
+            }, 3000);
+
+            return () => window.clearInterval(interval);
+        }
+    }, [selectedNote])
 
     useEffect(() => {
         setLastSaved('');
         setSelectedNote(notes && notes[0]);
     }, [notes, notes.length])
-
-    // useInterval(() => {
-    //     if (notes?.length) {
-    //         calculateAndSetTimeDiff();
-    //     }
-    // }, notes?.length ? 5 * 1000 : null, notes); // This updates the last saved text for each note
 
     const MemoizedHeader = useMemo(() => NotesAppHeader, []);
 
@@ -45,20 +39,12 @@ const Notes = () => {
         const note = notes?.find((n: INote) => n.id === noteId);
         setLastSaved('');
         note && setSelectedNote(note);
-        stop();
     };
 
     const autoSave = debounce((note: INote) => {
-        stop();
         const now = new Date();
         editNote({ ...note, lastEdited: now });
-        start();
     }, 2000);
-
-    const calculateAndSetTimeDiff = () => {
-        const intervalTimeDiff = selectedNote && calculateTimeDifference(selectedNote.lastEdited);
-        intervalTimeDiff && setLastSaved(getLastSavedTemplate(intervalTimeDiff));
-    };
 
     return (
         <div className={styles.container}>
