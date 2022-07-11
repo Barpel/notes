@@ -1,17 +1,23 @@
 import { useEffect, useRef } from 'react';
+import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
-export const useInterval = (callback: Function, delay: number) => {
-    const savedCallbak = useRef(callback);
+export function useInterval(callback: () => void, delay: number | null, dep: any) {
+    const savedCallback = useRef(callback)
+
+    console.log(dep);
+    useIsomorphicLayoutEffect(() => {
+        savedCallback.current = callback
+    }, [callback, dep])
 
     useEffect(() => {
-        savedCallbak.current = callback;
-    }, [callback]);
-
-    useEffect(() => {
-        function tick() {
-            savedCallbak.current();
+        if (!delay && delay !== 0) {
+            return
         }
-        const interval = window.setInterval(tick, delay);
-        return () => window.clearInterval(interval);
-    }, [delay])
-} 
+        const id = setInterval(() => savedCallback.current(), delay);
+
+        return () => {
+
+            clearInterval(id)
+        };
+    }, [delay, dep])
+}
